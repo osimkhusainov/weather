@@ -16,6 +16,7 @@ weatherForm.addEventListener("submit", (e) => {
   input.style.borderColor = "";
   messageOne.style.color = "";
   messageOne.textContent = "Loading...";
+  messageTwo.textContent = "";
   async function getWeather(url1) {
     try {
       const response = await fetch(url(url1));
@@ -25,9 +26,15 @@ weatherForm.addEventListener("submit", (e) => {
         messageTwo.textContent = "";
         return;
       }
+      if (data.location === undefined || data.forecast === undefined) {
+        messageOne.textContent = data.err;
+        messageTwo.textContent = "";
+        return;
+      }
       messageOne.textContent = `Region: ${data.location}`;
       messageTwo.textContent = `Forecast: ${data.forecast}`;
     } catch (error) {
+      console.log(error);
       messageOne.textContent = error;
       messageTwo.textContent = "";
     }

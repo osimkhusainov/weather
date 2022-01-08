@@ -33,10 +33,10 @@ app.get("/about", (req, res) => {
   });
 });
 
-app.get("/help", (req, res) => {
-  res.render("help", {
-    helpText: "This is some helpful text.",
-    title: "Help",
+app.get("/contact", (req, res) => {
+  res.render("contact", {
+    helpText: "Contact me:",
+    title: "Contact",
     name: "Osim Khusainov",
   });
 });
@@ -47,7 +47,7 @@ app.get("/weather", (req, res) => {
   }
   geocode(req.query.address, (err, { latitude, longitude, location } = {}) => {
     if (err) {
-      return res.send({ err });
+      return res.status(404).send({ err });
     }
     forecats(latitude, longitude, (err, forecastData) => {
       if (err) return res.send({ err });
@@ -60,11 +60,11 @@ app.get("/weather", (req, res) => {
   });
 });
 
-app.get("/help/*", (req, res) => {
+app.get("/contact/*", (req, res) => {
   res.render("404", {
     title: "404",
     name: "Osim Khusainov",
-    errorMessage: "Help article not found.",
+    errorMessage: "Contact article not found.",
   });
 });
 

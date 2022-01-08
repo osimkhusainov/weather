@@ -52,3 +52,32 @@ button {
     color: white;
     padding: 8px;
 }
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactlink {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.contactlink:hover {
+    color: #888
+}
+
+.osim {
+    color: #333;
+    font-family: arial;
+    font-size: 20px;
+}
+
+
+.text {
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
