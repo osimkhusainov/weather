@@ -1,4 +1,4 @@
-const url = (city) => `http://localhost:3000/weather?address=${city}`;
+const url = (city) => `${process.env.PORT}/weather?address=${city}`;
 
 const weatherForm = document.querySelector("form");
 const input = document.querySelector("input");
