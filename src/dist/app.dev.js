@@ -43,8 +43,8 @@ app.get("/contact", function (req, res) {
 });
 app.get("/weather", function (req, res) {
   if (!req.query.address) {
-    return res.send({
-      error: "Address not available"
+    return res.status(400).send({
+      error: "Invalid address"
     });
   }
 

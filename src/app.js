@@ -43,7 +43,7 @@ app.get("/contact", (req, res) => {
 
 app.get("/weather", (req, res) => {
   if (!req.query.address) {
-    return res.send({ error: "Address not available" });
+    return res.status(400).send({ error: "Invalid address" });
   }
   geocode(req.query.address, (err, { latitude, longitude, location } = {}) => {
     if (err) {
