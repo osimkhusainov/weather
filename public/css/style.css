@@ -16,11 +16,22 @@ body {
 .fa {
     padding: 20px;
     font-size: 30px;
-    width: 20px;
+    width: 10px;
     text-align: center;
     text-decoration: none;
-    background-color: #333;
     color: #eeee;
+}
+
+.fa-linkedin {
+    background: #333;
+    color: #eee;
+    margin-bottom: 10px;
+}
+
+.fa-instagram {
+    background: #333;
+    color: #eee;
+    margin-bottom: 10px;
 }
 
 footer {
