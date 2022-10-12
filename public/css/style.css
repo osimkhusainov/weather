@@ -14,12 +14,16 @@ body {
 }
 
 .fa {
-    padding: 20px;
+    padding: 10px;
     font-size: 30px;
-    width: 10px;
+    width: 13px;
     text-align: center;
     text-decoration: none;
     color: #eeee;
+}
+
+.fa:hover {
+    opacity: 0.7;
 }
 
 .fa-linkedin {
@@ -29,6 +33,12 @@ body {
 }
 
 .fa-instagram {
+    background: #333;
+    color: #eee;
+    margin-bottom: 10px;
+}
+
+.fa-gmail {
     background: #333;
     color: #eee;
     margin-bottom: 10px;
@@ -75,8 +85,8 @@ button {
 }
 
 .contacts {
-    display: flex;
-    flex-direction: column;
+    display: inline;
+
 }
 
 .contactlink {
