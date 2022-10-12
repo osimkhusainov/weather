@@ -19,6 +19,8 @@ body {
     width: 20px;
     text-align: center;
     text-decoration: none;
+    background-color: #333;
+    color: #eeee;
 }
 
 footer {
