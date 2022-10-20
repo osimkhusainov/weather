@@ -55,6 +55,7 @@ app.get("/weather", (req, res) => {
         forecast: forecastData,
         location: location,
         address: req.query.address,
+        author: "Brought to you by Osim Khusainov",
       });
     });
   });
