@@ -4,12 +4,13 @@ const weatherForm = document.querySelector("form");
 const input = document.querySelector("input");
 const messageOne = document.querySelector("#message-1");
 const messageTwo = document.querySelector("#message-2");
+const messageThree = document.querySelector("#message-3");
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let value = input.value;
   if (!value) {
     input.style.borderColor = "red";
-    messageOne.textContent = "Please, write location";
+    messageOne.textContent = "Please, indicate the location";
     messageOne.style.color = "red";
     return;
   }
@@ -17,6 +18,7 @@ weatherForm.addEventListener("submit", (e) => {
   messageOne.style.color = "";
   messageOne.textContent = "Loading...";
   messageTwo.textContent = "";
+  messageThree.textContent = "";
   async function getWeather(url1) {
     try {
       const response = await fetch(url(url1));
@@ -33,6 +35,7 @@ weatherForm.addEventListener("submit", (e) => {
       }
       messageOne.textContent = `Region: ${data.location}`;
       messageTwo.textContent = `Forecast: ${data.forecast}`;
+      messageThree.textContent = `Author: ${data.author}`;
     } catch (error) {
       console.log(error);
       messageOne.textContent = error;
